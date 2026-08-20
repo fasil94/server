@@ -29,7 +29,7 @@ app.use("/auth", authRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/ai", aiRoutes);
 
-app.post("/api/users", async (req, res) => {
+app.post("/users", async (req, res) => {
   try {
     const newUser = new User(req.body);
     await newUser.save();
@@ -39,7 +39,7 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-app.get("/api/users", async (req, res) => {
+app.get("/users", async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
