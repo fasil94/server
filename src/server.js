@@ -33,7 +33,10 @@ const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 app.get("/", (_req, res) => res.json({ message: "Task Dashboard API is running" }));
 
-app.use("/auth", authRoutes);
+// app.use("/auth", authRoutes);
+app.post("/auth/register", (req, res) => {
+  res.json({ message: "Direct register route is working!" });
+});
 app.use("/tasks", taskRoutes);
 app.use("/ai", aiRoutes);
 
