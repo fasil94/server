@@ -25,9 +25,9 @@ const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 app.get("/", (_req, res) => res.json({ message: "Task Dashboard API is running" }));
 
-app.use("/api/auth", authRoutes);
-app.use("/api/tasks", taskRoutes);
-app.use("/api/ai", aiRoutes);
+app.use("/auth", authRoutes);
+app.use("/tasks", taskRoutes);
+app.use("/ai", aiRoutes);
 
 app.post("/api/users", async (req, res) => {
   try {
